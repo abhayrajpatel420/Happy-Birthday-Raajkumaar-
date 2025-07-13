@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Raajkumaar!</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday Raajkumaar! 🎉</h1>
+        <img id="giftBox" src="gift1.png" alt="Gift Box" />
+        <button id="openBtn">Gift Ko Kholo</button>
+        <div id="message" class="hidden">
+            <img src="raajkumaar-photo.jpg" alt="Raajkumaar" class="photo" />
+            <h2>🎂 Mubaarak Ho Raajkumaar! 🎂</h2>
+            <p>Dosti mein power ho toh har surprise dil jeet leta hai! 💖</p>
+        </div>
+    </div>
+
+    <script>
+        const giftBox = document.getElementById('giftBox');
+        const openBtn = document.getElementById('openBtn');
+        const message = document.getElementById('message');
+        let step = 1;
+
+        openBtn.addEventListener('click', () => {
+            step++;
+            if (step <= 3) {
+                giftBox.src = `gift${step}.png`;
+                openBtn.textContent = `Phir Kholo`;
+            } else {
+                giftBox.classList.add('hidden');
+                openBtn.classList.add('hidden');
+                message.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
